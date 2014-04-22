@@ -1,0 +1,10 @@
+Padr�o:
+
+<!-- Inclui o cabeçalho padrão -->
+<jsp:include page="/WEB-INF/jsp/template/cabecalho.jsp"/>
+<!-- Inclui o menu padrão -->
+<jsp:include page="/WEB-INF/jsp/template/menu.jsp"/>
+<!-- Aqui entra o contéudo que terá na página: formulario, lista, entre outros. -->
+<h1>Hello World!</h1>
+<!-- Inclui o rodapé padrão -->
+<jsp:include page="/WEB-INF/jsp/template/rodape.jsp" />
