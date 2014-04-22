@@ -109,9 +109,7 @@ public class UsuarioController extends ControllerSuper<Usuario> {
 	@Get("/remove/{id}")
 	public void remove(@NotNull @Valid long id) {
 		validator.onErrorForwardTo(this).lista();
-		//Usuario usuario = new Usuario(id);
-		Usuario usuario = new Usuario();
-		usuario = this.entidade.carrega();
+		Usuario usuario = this.entidade.carrega();
 		if (usuario == null) {
 			Message msg = new SimpleMessage("Não foi possivel remover",
 					"Usuário não encontrado");

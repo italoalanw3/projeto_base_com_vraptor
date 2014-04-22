@@ -44,19 +44,19 @@ public class PersistenciaBD<T>{
 			switch (op) {
 			case INSERIR:
 				log.debug("Begin inserir");
-				session.persist(thisEntidade());
+				session.persist(entidade);
 				session.getTransaction().commit();
 				log.debug("Commit inserir");
 				break;
 			case ALTERAR:
 				log.debug("Begin alterar");
-				session.saveOrUpdate(thisEntidade());
+				session.saveOrUpdate(entidade);
 				session.getTransaction().commit();
 				log.debug("Commit alterar");
 				break;
 			case REMOVER:
 				log.debug("Begin remover");
-				session.delete(thisEntidade());
+				session.delete(entidade);
 				session.getTransaction().commit();
 				log.debug("Commit remover");
 			}
@@ -70,11 +70,7 @@ public class PersistenciaBD<T>{
 			return resultado;
 		}
 	}
-	
-	private T thisEntidade() {
-		return entidade;
-	}
-
+		
 	public boolean salvar() {
 		return operacao(OPERACAO_PERSISTENCIA_BD.INSERIR);
 	}

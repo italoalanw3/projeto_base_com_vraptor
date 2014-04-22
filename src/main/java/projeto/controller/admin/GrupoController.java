@@ -74,9 +74,7 @@ public class GrupoController extends
 	}
 
 	public void remove(@NotNull @Valid long id) {
-		//GrupoUsuario grupo = new GrupoUsuario(id);
-		GrupoUsuario grupo = new GrupoUsuario();
-		grupo = this.entidade.carrega();
+		GrupoUsuario grupo = this.entidade.carrega();
 		if (grupo == null) {
 			validator.add(new SimpleMessage("Falha ao remover",
 					"Não foi possivel remover"));
